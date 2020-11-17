@@ -1,6 +1,6 @@
 # Задача "Исследование JVM через VisualVM"
 ## Слайд CPU
-![alt text](https://avatars.mds.yandex.net/get-images-cbir/2320884/SIAD3v6XLmpeQOqBhh6iEQ/ocr)
+![alt text](https://github.com/wwowann/JVM_VisualVM_experience/blob/master/CPU.png?raw=true)
 ### Описание
 * на слайде метка `io.vertx` установлена в момент запуска метода `loadToMetaspaseAllFrom()`, время 20:22:19.687
 * после паузы 3 сек запускается этот же метод - метка на слайде `io.netty`, время 20:22:26.009
@@ -13,17 +13,17 @@
 по окончании создания экземпляров класса `ArrayList`  
 
 ## Слайд CLASSES
-![alt text](https://avatars.mds.yandex.net/get-images-cbir/3954109/blPOnt33X0x_Gv3GYf2ySg/ocr)
+![alt text](https://github.com/wwowann/JVM_VisualVM_experience/blob/master/CLASSES.png?raw=true)
 ### Описание
 * не смотря на загрузку классов JVM, размер используемой памяти не изменился, однако общее количество
 доступной памяти значительно увеличилось
 
 ## Слайд HEAP
-![alt text](https://avatars.mds.yandex.net/get-images-cbir/3606616/0LsanJLme5vg8t1xtlKz-Q/ocr)
+![alt text](https://github.com/wwowann/JVM_VisualVM_experience/blob/master/HEAP.png?raw=true)
 ### Описание
 * при загрузке классов JVM не наблюдается скачка потребления ресурсов в куче, так как они подгружаются в `Metaspace`, затем начинается загрузка создаваемых объектов внутреннего класса через метод `createSimpleObjects()`, о чем свидетельствуют точные моменты окончания загрузки созадаваемых в этом методе. Правда момент окончания работы метода в третий раз не совпал, но близок к максимальному значению используемой памяти в куче
 
 ## Слайд THREAD
-![alt text](https://avatars.mds.yandex.net/get-images-cbir/4328118/0Oum1i8SdbACsEnkk7Qs2g/ocr)
+![alt text](https://github.com/wwowann/JVM_VisualVM_experience/blob/master/THREAD.png?raw=true)
 ### Описание
 * запущенный поток отработал в штатном режиме, какой-то зависимости от работы кода внутри потока не наблюдается
